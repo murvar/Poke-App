@@ -10,10 +10,10 @@ body {
 
 .pokedex-header {
   display: flex;
-  justify-content: space-between;
   background-color: #000000;
   background-color: transparent;
   position: fixed;
+  justify-content: space-between;
   top: 0;
   max-width: 1000px;
   z-index: 10;
@@ -29,6 +29,7 @@ body {
   color: #fef8e6;
   border-width: 1;
   border-radius: 50px;
+  margin-top: 10px;
 }
 
 .pokemon-home-button:hover {
@@ -367,4 +368,13 @@ p {
 
 .speed {
   background-color: #26b223;
+}
+
+.pokemon-search {
+  border-radius: 50px;
+  font-size: 2em;
+  width: 250px;
+  padding: 20px;
+  background-color: rgba(255, 254, 254, 0.5);
+  margin-top: 10px;
 }

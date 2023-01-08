@@ -20,18 +20,17 @@ function FetchPokemon(props) {
     return <span>Error: {error.message}</span>
   }
 
-  return (
-    <div >
+  return(
+  <div >
       <div className={'pokemon-circle ' + data.types[0]['type']['name']}>
         <p className={'pokemon-id'}>#{String(data.id).padStart(3, '0')}</p>
         <img src={data.sprites.other.dream_world.front_default} alt={data.name} className={'pokemon-image'}/>    
         <h1 className={'pokemon-name'}>{data.name.toUpperCase()}</h1>
       </div>
-    </div>
-  )
+    </div>)
 }
 
-function Pokemon(props) {
+const Pokemon=(props, filter)=>{
   return (
     <div>
       <QueryClientProvider client={queryClient}>
