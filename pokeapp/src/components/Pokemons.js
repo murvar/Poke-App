@@ -1,13 +1,11 @@
 import '../App.css';
-import React, { useEffect, useState, useRef} from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PokePreview from './PokePreview';
 import { useQuery, QueryClientProvider, QueryClient } from '@tanstack/react-query'
 
 const queryClient = new QueryClient();
 
 function FetchPokemons() {
-
     const { status, data, error } = useQuery({
         queryKey: ['pkmns'],
         queryFn: () => 
@@ -16,7 +14,6 @@ function FetchPokemons() {
         .then(out => out.results)
     })
 
-  
     if (status === 'loading') {
       return <span>Loading...</span>
     }
@@ -28,11 +25,11 @@ function FetchPokemons() {
     return (
       <ul className={"pokedex-list"}>
         {data.map((pokemon) => (
-            <Link to={`/pokemon/${pokemon.name}`} key={pokemon.name}>
-                <li className={"pokemon-link"}> 
-                    <PokePreview data={pokemon} />
-                </li>
-            </Link>
+          <Link to={`/pokemon/${pokemon.name}`} key={pokemon.name}>
+              <li className={"pokemon-link"}> 
+                  <PokePreview data={pokemon} />
+              </li>
+          </Link>
         ))}
       </ul>
     )
@@ -41,12 +38,12 @@ function FetchPokemons() {
 const Pokemons=()=>{
 
     return (
-        <div>
-            <QueryClientProvider client={queryClient}>
-                <FetchPokemons />
-            </QueryClientProvider>
-        </div>
-      );
+      <div>
+          <QueryClientProvider client={queryClient}>
+              <FetchPokemons />
+          </QueryClientProvider>
+      </div>
+    );
 }
 
 export default Pokemons

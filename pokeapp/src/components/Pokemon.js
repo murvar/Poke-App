@@ -48,7 +48,7 @@ function GeneratePokemon() {
       return <span>Error: {error.message}</span>
     }
   
-    let types = []
+    const types = []
 
     for (let i = 0; i < data.types.length; i++) {
       types.push(data.types[i]['type']['name']);
@@ -59,9 +59,7 @@ function GeneratePokemon() {
     return (
       <div className={'pokemon-page'}>
         <div className={'pokemon-page-top ' + data.types[0]['type']['name']}>
-            
-            <img src={data.sprites.other.dream_world.front_default} alt={data.name} className={'pokemon-image'}/>    
-            
+            <img src={data.sprites.other.dream_world.front_default} alt={data.name} className={'pokemon-image'}/>      
         </div>
         <div className={'pokemon-page-bottom'}>
             <div className={'pokemon-page-name pokemon-name'}>
