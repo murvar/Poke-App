@@ -330,6 +330,8 @@ p {
 .pokemon-stats-titles {
   width: 120px;
   text-align: left;
+  margin-left: 20px;
+  font-size: 24px;
 }
 
 .pokemon-stat-progress {
@@ -338,6 +340,8 @@ p {
   height: 30px;
   border-radius: 50px;
   margin-bottom: 8px;
+  margin-right: 20px;
+  font-size: 24px;
 }
 
 .pokemon-stat-bar {
@@ -347,27 +351,27 @@ p {
 }
 
 .hp {
-  background-color: #e3350d;
+  background-color: #e73820;
 }
 
 .attack {
-  background-color: #e88821;
+  background-color: #fd7d24;
 }
 
 .defense {
-  background-color: #2d68d6;
+  background-color: #4592c4;
 }
 
 .special-attack {
-  background-color: #e8dd42;
+  background-color: #eed535;
 }
 
 .special-defense {
-  background-color: #5f648b;
+  background-color: #7b62a3;
 }
 
 .speed {
-  background-color: #26b223;
+  background-color: #9bcc50;
 }
 
 .pokemon-search {
