@@ -12,7 +12,7 @@ function FetchPokemon(props) {
   const { status, data, error } = useQuery({
       queryKey: [props.data.name],
       queryFn: () => 
-      fetch(props.data.url)
+      fetch('https://pokeapi.co/api/v2/pokemon/' + props.data.name)
       .then(response => response.json())
 
   })
@@ -27,20 +27,18 @@ function FetchPokemon(props) {
   }
 
   let types = []
-  for (let i = 0; i < data.types.length; i++) {
+  /*for (let i = 0; i < data.types.length; i++) {
     types.push(data.types[i]['type']['name']);
-  }
+  }*/
 
-  // also status === 'success', but 'else' logic works, too
   return (
     <div >
-      <div className={'pokemon-circle'}>
-        <div className={'shadow ' + String(types[0])}></div>
-        <img src={data.sprites.other.dream_world.front_default} alt={data.name} className={'pokemon-image'}/>
-        
+      <div className={'pokemon-circle ' + data.types[0]['type']['name']}>
+        <p className={'pokemon-id'}>#{String(data.id).padStart(3, '0')}</p>
+        <img src={data.sprites.other.dream_world.front_default} alt={data.name} className={'pokemon-image'}/>    
+        <h1 className={'pokemon-name'}>{data.name.toUpperCase()}</h1>
       </div>
-      <p>#{String(data.id).padStart(3, '0')}</p>
-      <h1 className={'pokemon-name'}>{data.name.toUpperCase()}</h1>
+      
       <ul className={'type-list'}>
         {types.map((type) => (
           <li className={type} key={String(type)}>
@@ -64,5 +62,3 @@ function Pokemon(props) {
 }
 
 export default Pokemon;
-
-//<img src={props.data.sprites.front_default} alt={props.data.name} />
