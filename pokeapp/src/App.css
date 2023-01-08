@@ -198,6 +198,21 @@ body {
   text-decoration: none;
 }
 
+h1 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
 .pokemon-id {
   font-size: 24px;
   font-family: "Copperplate";
@@ -207,9 +222,9 @@ body {
 }
 
 .pokemon-type {
-  font-size: 18px;
-  color: #777;
-  margin-bottom: 10px;
+  border-radius: 50px;
+  margin-right: 25px;
+  margin-left: 25px
 }
 
 .pokemon-stats {
@@ -250,20 +265,25 @@ body {
 .pokemon-page-name {
   display: flex;
   text-align: center;
-  justify-content: space-around;
+  justify-content: center;
+  
 }
 
 .pokemon-page-types {
   display: flex;
   text-align: center;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.pokemon-stats-ul {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 5px;
 }
 
 .pokemon-type-list {
   display: flex;
   text-align: center;
-  justify-content: space-around;
-  padding-left: 0px;
 }
 
 .pokemon-type-list li {
@@ -278,18 +298,22 @@ body {
   display: flex;
   text-align: center;
   justify-content: space-around;
+  font-family: Arial;
 }
 
 .pokemon-page-stats {
   text-align: center;
   margin-top: 0px;
   margin-bottom: 0px;
+  justify-content: center;
+  font-family: Arial;
 }
 
 .pokemon-stats-list {
   display: flex;
   text-align: center;
   padding-left: 0px;
+  justify-content: center;
 }
 
 .pokemon-stats-list li {
@@ -302,11 +326,10 @@ body {
 
 .pokemon-stats-titles {
   width: 120px;
-  margin-left: -30px;
   text-align: left;
 }
 
-#myProgress {
+.pokemon-stat-progress {
   width: 300px;
   background-color: #ddd;
   height: 30px;
@@ -314,9 +337,10 @@ body {
   margin-bottom: 8px;
 }
 
-#myBar {
+.pokemon-stat-bar {
   height: 30px;
   border-radius: 50px;
+  color: #000000;
 }
 
 .hp {

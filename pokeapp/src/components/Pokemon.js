@@ -71,7 +71,7 @@ function GeneratePokemon() {
             <div className={'pokemon-page-types'}>
                 <ul className={'pokemon-type-list'}>
                     {types.map((type) => (
-                    <li className={type} key={String(type)}>
+                    <li className={type + " pokemon-type"} key={String(type)}>
                         {capitalizeFirstLetter(type)}
                     </li>
                     ))}
@@ -89,14 +89,14 @@ function GeneratePokemon() {
             </div>
             <div className={'pokemon-page-stats pokemon-name'}>
                 <h3 className={''}>Base Stats</h3>
-                <ul className={''}>
+                <ul className={'pokemon-stats-ul'}>
                     {stats.map((stat) => (
                     <li className={'pokemon-stats-list'} key={stat["stat"]["name"]}>
                         <div className={'pokemon-stats-titles'}>
                             {abbreviate(stat["stat"]["name"])}
                         </div>
-                        <div id="myProgress">
-                            <div id="myBar" className={stat["stat"]["name"]} style={{width: stat["base_stat"]}}>
+                        <div className={"pokemon-stat-progress"}>
+                            <div className={stat["stat"]["name"] + " pokemon-stat-bar"} style={{width: stat["base_stat"]}}>
                                 {stat["base_stat"] + "/300"}
                             </div>
                         </div>
