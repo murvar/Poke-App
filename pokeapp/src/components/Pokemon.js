@@ -9,7 +9,6 @@ function capitalizeFirstLetter(string) {
 }
 
 function abbreviate(string) {
-    console.log(string)
     switch(string) {
         case string = "hp":
             return("HP")
