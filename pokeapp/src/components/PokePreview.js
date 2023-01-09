@@ -3,14 +3,12 @@ import { useQuery, QueryClientProvider, QueryClient } from '@tanstack/react-quer
 const queryClient = new QueryClient();
 
 function FetchPokemon(props) {
-
   const { status, data, error } = useQuery({
-      queryKey: [props.data.name],
-      queryFn: () => 
-      fetch('https://pokeapi.co/api/v2/pokemon/' + props.data.name)
-      .then(response => response.json())
-
-  })
+    queryKey: [props.data.name],
+    queryFn: () => 
+    fetch('https://pokeapi.co/api/v2/pokemon/' + props.data.name)
+    .then(response => response.json())
+  });
 
   if (status === 'loading') {
     return <span>Loading...</span>
@@ -21,13 +19,14 @@ function FetchPokemon(props) {
   }
 
   return(
-  <div >
+    <div >
       <div className={'pokemon-circle ' + data.types[0]['type']['name']}>
         <p className={'pokemon-id'}>#{String(data.id).padStart(3, '0')}</p>
         <img src={data.sprites.other.dream_world.front_default} alt={data.name} className={'pokemon-image'}/>    
         <h1 className={'pokemon-name'}>{data.name.toUpperCase()}</h1>
       </div>
-    </div>)
+    </div>
+  );
 }
 
 const Pokemon=(props, filter)=>{
@@ -38,6 +37,6 @@ const Pokemon=(props, filter)=>{
       </QueryClientProvider>
     </div>
   );
-}
+};
 
 export default Pokemon;

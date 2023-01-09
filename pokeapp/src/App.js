@@ -5,7 +5,6 @@ import Pokemons from './components/Pokemons';
 import Pokemon from './components/Pokemon';
 
 function App() {
-
   const [searchInput, setSearchInput] = useState("");
 
   const handleChange = (e) => {
