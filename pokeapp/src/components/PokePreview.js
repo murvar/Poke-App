@@ -23,7 +23,7 @@ function FetchPokemon(props) {
     <div >
       <div className={'pokemon-circle ' + data.types[0]['type']['name']}>
         <p className={'pokemon-id'}>#{String(data.id).padStart(3, '0')}</p>
-        <img src={data.sprites.other.dream_world.front_default} alt={data.name} className={'pokemon-image'}/>    
+        <img src={data.sprites.other.dream_world.front_default} alt={data.name} className={'pokemon-preview-image'}/>    
         <h1 className={'pokemon-name'}>{data.name.toUpperCase()}</h1>
       </div>
     </div>

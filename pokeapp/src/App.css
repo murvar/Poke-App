@@ -170,14 +170,18 @@ body {
   position: relative;
 }
 
-.pokemon-image {
+.pokemon-preview-image {
   width: 70%;
   height: 70%;
 }
 
-.pokemon-image:hover {
-  transform: translateY(-5px);
+.pokemon-preview-image:hover {
   transform: rotateY(180deg);
+}
+
+.pokemon-image {
+  width: 70%;
+  height: 70%;
 }
 
 .shadow {
