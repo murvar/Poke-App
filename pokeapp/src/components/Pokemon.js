@@ -2,6 +2,7 @@ import '../App.css';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery, QueryClientProvider, QueryClient } from '@tanstack/react-query'
+
 const queryClient = new QueryClient();
 
 function capitalizeFirstLetter(string) {

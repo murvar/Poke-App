@@ -1,5 +1,6 @@
 import '../App.css';
 import { useQuery, QueryClientProvider, QueryClient } from '@tanstack/react-query'
+
 const queryClient = new QueryClient();
 
 function FetchPokemon(props) {
